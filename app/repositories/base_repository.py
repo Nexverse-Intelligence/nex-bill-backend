@@ -1,15 +1,12 @@
 # Standard library
 import uuid
 from datetime import datetime
-from typing import Generic, TypeVar
 
 # Third-party
 from sqlalchemy.orm import Session
 
-ModelType = TypeVar("ModelType")
 
-
-class BaseRepository(Generic[ModelType]):
+class BaseRepository[ModelType]:
     """
     Generic base repository providing standard CRUD
     operations for all domain entities.

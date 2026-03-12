@@ -42,7 +42,7 @@ class Base(DeclarativeBase):
     pass
 
 
-def get_db() -> Generator[Session, None, None]:
+def get_db() -> Generator[Session]:
     """
     FastAPI dependency implementing Unit of Work.
 
@@ -62,7 +62,7 @@ def get_db() -> Generator[Session, None, None]:
 
 
 @contextmanager
-def get_db_context() -> Generator[Session, None, None]:
+def get_db_context() -> Generator[Session]:
     """
     Context manager version of get_db for use in
     Celery tasks and scripts outside of FastAPI.
